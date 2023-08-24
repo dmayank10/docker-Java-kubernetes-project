@@ -32,6 +32,7 @@ pipeline {
                     parallel buildSteps
                 }
             }
+        }
         
         stage('Docker Build & Push') {
             steps {
