@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the Git repository
-                git credentialsId: 'djkp', url: 'https://github.com/dmayank10/docker-Java-kubernetes-project.git'
+                git branch: 'mayank', credentialsId: 'djkp', url: 'https://github.com/dmayank10/docker-Java-kubernetes-project.git'
             }
         }
         
