@@ -11,6 +11,8 @@ pipeline {
         
         stage('Build All Modules') {
             steps {
+                withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
+
                 script {
                     def moduleDirs = findFiles(glob: '**/pom.xml')
                     
@@ -33,7 +35,7 @@ pipeline {
                 }
             }
         }
-        
+        }
         stage('Docker Build & Push') {
             steps {
                 script {
